@@ -80,6 +80,138 @@ as.integer(dtObject)
 as.double(dtObject)
 as.double(dtObjectVector)
 ```
+```{r}
+dtObject<-ymd_hms("1970-01-01 00:02:53") 
+```
+```{r}
+dtObjectVector<-ymd_hms(
+  c("1970-01-01 00:02:53",
+    "1980-02-11 11:25:22")
+)
+```
+```{r}
+Sys.timezone()
+```
+```{r}
+twDateTime <- ymd_hms("2019-03-18 14:04:00", tz="Asia/Taipei")
+```
+```{r}
+LisbonDateTime <- with_tz(twDateTime,tzone="Europe/Lisbon")
+```
+```{r}
+NewYorkDateTime <- with_tz(twDateTime,tzone = "America/New_York")
+```
+```{r}
+typeof(twDateTime)
+as.integer(twDateTime)
+```
+```{r}
+typeof(NewYorkDateTime)
+as.double(NewYorkDateTime)
+```
+```{r}
+TWDT <- dmy_h("27-03-2019 15")
+```
+```{r}
+NYDT <- mdy_hms("06-19-2000 15-05-05")
+```
+```{r}
+TWDT <- dmy("11-09-2018")
+```
+```{r}
+TWDT <- mdy("March 3,2019")
+```
+```{r}
+as.integer(ymd("1970-01-01"))
+as.integer(ymd("1970-01-02"))
+as.integer(ymd("2019-03-11"))
+```
+```{r}
+a <- c(1, 5, -3)
+b <- c(0.5, 12, 2)
+```
+```{r}
+aL <- c(1L, 5L, -3L)
+bL <- c(-2L, -4L, 8L)
+```
+```{r}
+a <- c(1, 5, -3)
+b <- c(0.5, 12, 2)
+aL <- c(1L, 5L, -3L)
+bL <- c(-2L, -4L, 8L)
+a+b
+aaL <- a+aL
+class(aaL)
+```
+```{r}
+a <- c(1, 5, -3)
+b <- c(0.5, 12, 2)
+a+b
+a-b
+a*b
+a/b
+```
+```{r}
+c <- 4
+
+c+a
+```
+```{r}
+a <- ymd_hms("2019-03-18 14:04:00")
+b <- ymd_hms("2019-03-18 14:05:50") 
+a-b
+b-a
+```
+```{r}
+startingDate <- ymd("2000-02-17")
+```
+```{r}
+a <-startingDate + years(1)
+```
+
+```{r}
+x <- 5
+y <- 7
+(x ==y)
+(x!=y)
+```
+```{r}
+x3 <- c("小明","小花")
+y3 <- c("小明","小華")
+x3 == y3
+```
+```{r}
+x4 <- c(1,5,8)
+y4 <- c(5,8)
+
+x4 %in% y4
+```
+```{r}
+x2 <- c(1,NA,10)
+y2 <- c(-1,NA,20)
+x2%in% y2
+x3 <- c(NA,"小花")
+y3 <- c(NA,"小華")
+x3%in% y3
+```
+
+```{r}
+is.na(x2)
+```
+```{r}
+sum(x2)
+sum(x2, na.rm = TRUE)
+```
+
+
+
+
+
+
+
+
+
+
 
 
 
