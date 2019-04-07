@@ -281,7 +281,33 @@ x5 %in% greatTaipei
 !(x5 %in% greatTaipei)
 ```
 
+```{r}
+y5 <- c("女","男","女")
 
+y5=="女"
+!(y5=="女")
+```
+```{r}
+(x5 %in% greatTaipei) & (y5=="女")
+```
+```{r}
+(x5 %in% greatTaipei) | (y5=="女")
+```
+```{r}
+xor(x5 %in% greatTaipei, y5=="女")
+```
+```{r}
+y5
+(y5 == "女")
+which(y5=="女")
+```
+```{r}
+library(readr)
+exData2 <- read_csv("https://raw.githubusercontent.com/tpemartin/github-data/master/exData2.csv")
+date <- as.character(exData2$期間)
+currency <- exData2$幣別
+exchangeRate <- exData2$匯率
+```
 
 
 
