@@ -203,6 +203,9 @@ sum(x2)
 sum(x2, na.rm = TRUE)
 ```
 
+```{r}
+install.packages("readr")
+```
 
 
 ```{r}
@@ -218,13 +221,10 @@ head(currency) # head 會顯示物件前六個元素值。
 levels(currency)
 ```
 
-
-資料一進來並沒有被當成factor class
 ```{r}
 class(currency)
 ```
 
-更正為factor class
 ```{r}
 currency <- as.factor(currency)
 class(currency)
@@ -234,8 +234,6 @@ class(currency)
 ```{r}
 levels(currency)
 ```
-
-length(): 數向量內的元素個數（向量長度）
 ```{r}
 length(levels(currency))
 ```
