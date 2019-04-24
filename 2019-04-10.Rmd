@@ -289,5 +289,49 @@ logiCorrect <- str_length(birthday) ==8
 logiCorrect
 ```
 
+```{r}
+a <- matrix(c(1:6), nrow=3, ncol=2) ##建立3x2的矩陣，分別填入1~6的值
+a
+```
+```{r}
+StuList <- list(
+  學號=c(172,214,322,425,517),
+  姓名=c("小明","大雄","胖虎","小新","大白"),
+  成績=c(80,60,90,70,50)
+  )
+StuList 
+StuList[[2]][3]
+```
+```{r}
+chosenLETTERS <- LETTERS[1:16]
+matObj1 <- matrix(chosenLETTERS,4,4)
+matObj1
+```
+```{r}
+LETTERS
+chosenLETTERS <- LETTERS[1:8]
+m <- matrix(chosenLETTERS,2,4)
+tolower(m) 
+toupper(m) 
+```
+```{r}
+matObj1 <-matrix(chosenLETTERS,5,3)
+matObj1 
+matObj11 <-matrix(chosenLETTERS,3,5)
+matObj11
+```
+```{r}
+matObj1[1,1]
+matObj1[c(T,F,F,T,F),c(F,T,T)]
+```
+```{r}
+library(readr)
+classSurvey <- read_csv("https://raw.githubusercontent.com/tpemartin/github-data/master/classSurvey.csv")
+```
+```{r}
+classSurvey[c(1:60),c(4,5)]
+classSurvey[,c(4,5)]
+```
+
 
 
