@@ -332,6 +332,103 @@ classSurvey <- read_csv("https://raw.githubusercontent.com/tpemartin/github-data
 classSurvey[c(1:60),c(4,5)]
 classSurvey[,c(4,5)]
 ```
+```{r}
+Vector1 <- letters[1:6]
+Vector1
+
+names(Vector1)
+```
+```{r}
+names(Vector1) <- c('名稱1','名稱2','名稱3','名稱4','名稱5','名稱6')
+names(Vector1)
+```
+```{r}
+LETTERS # R內設元素值為英文字母群的character vector
+chosenLETTERS <- LETTERS[1:15]
+matObj1 <- matrix(chosenLETTERS,5,3)
+matObj1
+```
+```{r}
+colnames(matObj1) <-c('欄位1','欄位2','欄位3')
+rownames(matObj1) <- c('行：1','行：2','行：3','行：4','行：5')
+matObj1
+```
+```{r}
+a <- c("1","b","TRUE")
+a
+a[[2]] <- "c" # 元素存在
+a[[5]] <- "7" # 元素不存在
+a
+```
+```{r}
+b <- list(
+  元素1=1,
+  元素2="Hello",
+  元素3=TRUE
+)
+b[[3]] <- FALSE
+b[[5]] <- "7"
+b
+```
+```{r}
+names(b)
+b[["新元素A"]] <- c(1,2,3)
+b$新元素B <- c(T,F,T)
+b
+```
+```{r}
+library(readr)
+exData3 <- read_csv("https://raw.githubusercontent.com/tpemartin/github-data/master/exData3.csv",
+                    col_types = cols(
+                      匯率 = col_number(),
+                      期間 = col_character()))
+library(lubridate)
+exData3$期間 <- ymd(exData3$期間)
+class(exData3$期間)
+exData3
+
+
+```
+```{r}
+exData3[["isAsiaCrisis"]] <- (exData3$期間 >= "1997-06-01" & exData3$期間 <= "1998-12-01")
+exData3
+```
+```{r}
+logiAsiaCrisis <- exData3$isAsiaCrisis
+exData3[logiAsiaCrisis, ]
+```
+```{r}
+exData3[exData3$isAsiaCrisis==T ,]
+```
+```{r}
+library(readr)
+transcriptDataFinal <- read_csv("https://raw.githubusercontent.com/tpemartin/github-data/master/transcriptDataFinal.csv")
+studentID <-"92aS67fee" 
+transcriptDataFinal$學號==studentID -> logiChosenStudent
+sum(transcriptDataFinal$學期成績[logiChosenStudent]*
+  transcriptDataFinal$學分數[logiChosenStudent])/
+  sum(transcriptDataFinal$學分數[logiChosenStudent]) -> GPA
+```
+```{r}
+utility_cobb_douglass <- function(x,y,.alpha,.beta){
+  utilValue <- x^.alpha*y^.beta # 程序產生output值
+  return(utilValue) # 傳回output值
+}
+```
+```{r}
+utility_plus_method <- function(x,y){
+  utilvalue <- x + y
+  return(utilvalue)
+}
+utility_plus_method(1,2)
+```
+```{r}
+supply_fun <- function(a,b,P){
+  value <- a + b*P
+  return(value)
+}
+
+```
 
 
 

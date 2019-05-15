@@ -122,9 +122,8 @@ TWDT <- dmy("11-09-2018")
 TWDT <- mdy("March 3,2019")
 ```
 ```{r}
-as.integer(ymd("1970-01-01"))
-as.integer(ymd("1970-01-02"))
-as.integer(ymd("2019-03-11"))
+as.integer(ymd("1964-12-10"))
+as.integer(ymd("2019-04-28"))
 ```
 ```{r}
 a <- c(1, 5, -3)
@@ -153,7 +152,6 @@ a/b
 ```
 ```{r}
 c <- 4
-
 c+a
 ```
 ```{r}
@@ -167,6 +165,7 @@ startingDate <- ymd("2000-02-17")
 ```
 ```{r}
 a <-startingDate + years(1)
+a
 ```
 
 ```{r}
